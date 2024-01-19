@@ -13,7 +13,9 @@ def call(body) {
       disableConcurrentBuilds()
     }
    stages {
-     stage('Running Terraform Build')
+     stage('Running Terraform Build') {
+    
+     }
     }
    }
 }
