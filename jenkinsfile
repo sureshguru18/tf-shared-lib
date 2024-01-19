@@ -12,5 +12,8 @@ def call(body) {
       ansiColor('xterm')
       disableConcurrentBuilds()
     }
+   stages {
+     stage('Running Terraform Build')
+    }
    }
 }
