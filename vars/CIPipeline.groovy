@@ -1,8 +1,16 @@
-pipeline {
-    agent any
+#! /usr/bin/env groovy
+
+def call(body) {
+  def pipelineParams= [:]
+  body.resolveStrategy = Closure.DELEGATE_FIRST
+  body.delegate = pipelineParams
+  body()
+
+  pipeline {
+    agent none
     options {
-        // Timeout counter starts AFTER agent is allocated
-        timeout(time: 1, unit: 'SECONDS')
+      ansiColor('xterm')
+      disableConcurrentBuilds()
     }
     stages {
         stage('Example') {
