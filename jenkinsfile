@@ -12,18 +12,21 @@ def call(body) {
       ansiColor('xterm')
       disableConcurrentBuilds()
     }
-   stages {
-     stage('Running Terraform Build') {
-     stages {
-       stage('Get the list of changes directories')
+    stages {
+      stage('Running Terraform Build') {
         steps {
-         script {
-
-         }
+          script {
+            // Add your Terraform build steps here
+          }
         }
-     }   
-    
-     }
+      }
+      stage('Get the list of changes directories') {
+        steps {
+          script {
+            // Add your steps to get the list of changed directories here
+          }
+        }
+      }
     }
-   }
+  }
 }
